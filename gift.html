@@ -1,0 +1,159 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>For My Honey, wo yibeizi de baobei'er.</title>
+<script type="text/javascript">
+//<![CDATA[
+//********************/
+//  x 系列之 xScrollStick
+//  作者：Hutia
+//  未经同意不得转载或用于商业用途
+//********************/
+/*
+说明：
+  x系列是Hutia开发的系列JS代码，配合相应的css后可以实现快速的自定义标签
+  目前xScrollStick支持的浏览器类型为：IE5.5, FF1.5
+  xScrollStick的标签为
+  	<div class="xScrollStick">
+  		Content...
+  	</div>
+  
+  支持属性：
+    无
+  支持方法：
+    无
+*/
+//**载入CSS*****
+var xScrollStickCssFilePath="sp\/css\/xframe.css";
+//document.write("<style>@import url("+xScrollStickCssFilePath+");</style>");
+//**检测浏览器种类*****
+var BROWSERNAME="";
+switch(navigator.appName.toLowerCase()){
+	case "netscape":
+		BROWSERNAME="ns";
+	break;
+	case "microsoft internet explorer":
+	default:
+		BROWSERNAME="ie";
+	break;
+}
+//**设置初始化事件******
+switch(BROWSERNAME){
+	case "ns":
+		window.addEventListener("load",_xScrollStick_init,false);
+	break;
+	case "ie":
+	default:
+		window.attachEvent("onload",_xScrollStick_init);
+}
+//**初始化函数******
+function _xScrollStick_init(){
+	var allTheScrollSticks=document.getElementsByTagName("div");
+	for(var i=0;i<allTheScrollSticks.length;i++){
+		if(allTheScrollSticks[i].className.match(/^((xScrollStick)|(.+ +xScrollStick)|(xScrollStick +.+)|(.+ +xScrollStick +.+))$/))_xScrollStick_event_doInit(allTheScrollSticks[i]);
+	}
+	window_event_scroll();
+}
+//**事件响应函数区******
+function _xScrollStick_event_doInit(element){
+	//初始化变量
+	element.offX=element.offsetLeft;
+	element.offY=element.offsetTop;
+	
+	//设置方法
+	element.Stick=_xScrollStick_method_Stick;
+	
+	//设置事件
+	switch(BROWSERNAME){
+		case "ns":
+			window.addEventListener("scroll",window_event_scroll,false);
+		break;
+		case "ie":
+		default:
+			window.attachEvent("onscroll",window_event_scroll);
+	}
+	
+	//获取设置
+	//无
+	document.body.parentNode.onscroll=window_event_scroll;
+}
+function window_event_scroll(){
+	var allTheScrollSticks=document.getElementsByTagName("div");
+	for(var i=0;i<allTheScrollSticks.length;i++){
+		if(allTheScrollSticks[i].className.match(/^((xScrollStick)|(.+ +xScrollStick)|(xScrollStick +.+)|(.+ +xScrollStick +.+))$/))try{allTheScrollSticks[i].Stick();}catch(e){}
+	}
+}
+//**方法函数区******
+function _xScrollStick_method_Stick(){
+	var x=this.offX, y=this.offY, po=this;
+	this.style.position="absolute";
+	x+=document.body.parentNode.scrollLeft;
+	y+=document.body.parentNode.scrollTop;
+	this.style.left=x+"px";
+	this.style.top=y+"px";
+	
+}
+//**通用函数区***
+//无
+//]]>
+</script>
+
+
+
+<style type="text/css">
+<!--
+*{margin:0;padding:0;border:0;}
+img{ display:block;margin:0 auto;}
+body{ background:#f5f5d1 url(image/background.jpg) repeat;
+}
+#love{ text-align:center;width:600px; margin:0 auto;}
+.music{position:absolute;bottom:10px;left:0;width:200px;height:180px;overflow:hidden;}
+p{color:#798c13;font-family:"微软雅黑",arial; font-size:12px;padding:0 0 50px 0;line-height:1.75em;}
+-->
+</style>
+</head>
+
+<body>
+
+<div id="love">
+<img src="image/love_03.gif" />
+<p>我不管今天是什么日子，平安夜也好，圣诞节也罢，我统统不管。<br />
+	我只把它当作生命中普通的一天。而且，我要我的傻婆在每一个每一个普通的日子，<br />
+	没有烦恼，没有忧愁，每天开开心心，健健康康的，美美的，好好的！</p>
+<img src="image/love_07.gif" />
+<p>越洋的书信寄得太慢，<br />难以承载我对傻婆沉甸甸的思念。<br />于是，请允许老公将你美丽的名字铭刻成humengyun.com，<br />放在自由飞翔的web世界。<br />这样，你无论在哪儿，无论何时，<br />傻婆都可以看得到，不是words，<br />是萦绕在代码和文字间一缕缕浓郁的爱。</p>
+<img src="image/love_10.gif" />
+<p>老公不是一个浪漫的人，instead of，我太粗心了。<br />去年的某一天，我竟然傻到没有送一个苹果，哪怕是最普通的一个，<br />只要是我送的，我送给我家傻婆的....<br />每每一想起来，我都懊恼不已。<br />I‘m so sorry，my honey...</p>
+<img src="image/love_14.gif" />
+<p>傻婆，只有你知道，我是一个多么烦人的家伙。<br />像个800年前的弃妇一样，总是对你叨叨个没完...<br />宝贝儿，记得添衣服，虽然鹿儿岛不是那么冷。<br />万不可为了beauty，冻着了。<br />..........（此处省去千万字）<br />honey，别烦我，U are my Angel...</p>
+<img src="image/love_18.gif" />
+<p>宝贝儿心肝儿，总是希望你每天开心着。<br />于是，我打算给你讲个笑话（虽然我的笑话在你面前从没奏效过..）<br /><br />笑话开始：考卷发到最后一张时，<br />老师看着考卷上的名字叫着：“林蛋大。”没有人回应。<br />又叫了一次：“林蛋大。”还是没人回应。<br />老师不耐了，问：“没拿到考卷的人举手。”一学生举手。<br />老师问：“你叫什么名字？”<br />学生回答：“我叫楚中天。”<br /><br />婆，我讲笑话的水平确实差，如果这还没有把你逗开心，那就看看上面狗狗吧。<br />看着它们可爱的样子，你应该会扬起嘴角，赐我一个微笑:）吧~(*^__^*) 嘻嘻……<br /><br /><a target="_blank" href="http://sighttp.qq.com/authd?IDKEY=95789fd757a14038de6df3f799f021ec3fd2dee1dc994fd6"><img border="0"  src="http://wpa.qq.com/imgd?IDKEY=95789fd757a14038de6df3f799f021ec3fd2dee1dc994fd6&pic=41 &r=0.20824461074030332" alt="可以给我留言哦" title="可以给我留言哦"></a></p>
+<img src="image/love_22.gif" />
+<p>PS: Honey，<br />you are my angel.<br />I love you, forever.<br />waiting for you...<br /><br />Kiss, one more.</p>
+</div>
+
+<div class="xScrollStick music">
+	<embed src='http://widget.top100.cn/swf/widgetplayer.swf?p=UsmGpxEIW0N+eMllf8Z6YE+I5muLzfN71BHNTtj5pD70iy7cz1whwyYM3mmBfVyIIN2Fnj6r9/ezmfcNsY6Tz103AHhjRpN+C/smer3WLguZceZGBlbQbM9ra5mlYRhTySbAf1nDU/kNOqfJBkZ1ddD1HoRZr8WjSfIRCQAeVyx3VW+snptKZ9hyjIaBiSEhd47TGX0NguYNPuQNjkyK0/mcz3rhehaxRqdYD1KnZDsROoqgvJFSV/WsiBhXkZ9zW7qGJIRBv5dCmIhJJXOwxEWSxZxgotutK+0X19LOYpq6Nb0JoH5Xjw==' width='200' height='300' type='application/x-shockwave-flash' wmode='transparent'>
+	</embed>
+</div>
+
+<div style="position:absolute;z-index:-1;left:0;top:0;">
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="1000" height="580">
+  <param name="movie" value="image/butterfly.swf" />
+  <param name="quality" value="high" />
+  <param name="wmode" value="transparent" /> 
+  <embed src="image/butterfly.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="1000" height="580" wmode="transparent"></embed>
+</object>
+</div>
+<div style="position:absolute;z-index:-1;right:0;bottom:0;">
+<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="1000" height="580">
+  <param name="movie" value="image/butterfly.swf" />
+  <param name="quality" value="high" />
+  <param name="wmode" value="transparent" /> 
+  <embed src="image/butterfly.swf" quality="high" pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="1000" height="580" wmode="transparent"></embed>
+</object>
+</div>
+
+</body>
+</html>
